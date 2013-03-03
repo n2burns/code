@@ -1,0 +1,50 @@
+#conky config for mpd
+
+#When done, should show the album art of the current track as well as the 
+# volume, title, artist, album and status
+#TODO maybe overlap the status ( || > [] etc) on top of the album art
+
+##############################################
+##  Settings
+###############################################
+background yes
+use_xft yes
+xftfont monospace:size=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 10
+maximum_width 200
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color d8d8d8
+#default_color 222222
+default_shade_color 000000
+default_outline_color d9d7d6
+alignment bottom_right
+gap_x 12
+gap_y 125
+#gap_y 42
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+imlib_cache_size 0
+##############################################
+#  Output
+##############################################
+TEXT
+M U S I C
+${hr}
+${tab 60}$mpd_title
+${tab 60}$mpd_artist
+${tab 60}\#$mpd_track - $mpd_album
+${tab 60}${if_match "$mpd_status" == "Paused"} || $else > ${endif}${mpd_vol}% $mpd_elapsed/$mpd_length
+${image /home/n2burns/tmp/curMPD.jpg -p 0,30 -s 55x55}

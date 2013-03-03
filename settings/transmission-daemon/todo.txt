@@ -1,0 +1,3 @@
+make download, incomplete, torrent directories and change those in settings.json
+alt-speed-time
+

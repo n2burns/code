@@ -1,0 +1,74 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+#  Settings
+##############################################
+background yes
+use_xft yes
+xftfont monospace:size=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 240
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color d8d8d8
+#default_color 222222
+default_shade_color 000000
+default_outline_color d9d7d6
+alignment top_left
+gap_x 1154
+gap_y 42
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+##############################################
+#  Output
+##############################################
+TEXT
+S Y S T E M    I N F O
+${hr}
+Host: $alignr$nodename
+CPU:$alignr${freq 1}mHz ${freq 2}mHz
+$alignr${freq 3}mHz ${freq 4}mHz
+           $cpubar
+RAM: $alignr $mem/$memmax
+           $membar
+Swap: $alignr $swap/$swapmax
+           $swapbar
+Disk: $alignr $fs_used/$fs_size
+           $fs_bar
+$alignr ${fs_used /media/windows/}/${fs_size /media/windows/}
+           ${fs_bar /media/windows/}
+Battery:   $battery_bar
+Network Address:$alignr${addr wlan0}
+
+P R O C E S S E S
+${hr}
+${top name 1}$alignr${top cpu 1}% CPU
+${top name 2}$alignr${top cpu 2}% CPU
+${top name 3}$alignr${top cpu 3}% CPU
+
+${top_mem name 1}$alignr${top_mem mem 1}% Mem
+${top_mem name 2}$alignr${top_mem mem 2}% Mem
+${top_mem name 3}$alignr${top_mem mem 3}% Mem

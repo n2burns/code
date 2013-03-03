@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+#folder_albumart.sh
+
+#This script moves all files of the form ~/Music/*/*/*/[f|F]older.jpg
+#to albumart.jpg
+#It will not clobber files and TODO notify the user 
+
+
+cd ~/Music/
+
+for i in */*/*/Folder.jpg; do
+	org="$i"
+	move=${org%Folder.jpg}albumart.jpg
+	if [ -e move ]; then
+		echo "$move already exists!"
+	fi
+	mv "$org" "$move"
+done

@@ -1,0 +1,1 @@
+sh: for i in `find /lib /var -name wl\.ko`; do mv $i ${i}.orig; done
