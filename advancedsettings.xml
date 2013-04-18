@@ -15,6 +15,11 @@
   	<pass>xbmc</pass>
   </musicdatabase>
 
+  <videolibrary>
+    <hideemptyseries>true</hideemptyseries>
+    <recentlyaddeditems>150</recentlyaddeditems>
+  </videolibrary>
+
   <!--
   <pathsubstitution>
 		<substitute>
