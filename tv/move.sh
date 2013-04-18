@@ -87,6 +87,10 @@ function series {
 		flag=true
 	  copy="$tvDir/The Newsroom [2012]"
 	fi
+	#Golden Boy 2013
+	if [[ "$s" == "Golden Boy" ]]; then
+		flag=true
+	  copy="$tvDir/Golden Boy [2013]"
 }
 
 function season {
