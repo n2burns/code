@@ -1,0 +1,24 @@
+ .vimrc
+ dual monitor
+    system tray
+  test battery performance
+X install vlc
+    vlc - media controls (maybe other players too)
+X install/setup mpd/mpc/sonata/mpdscrobble
+X   mpd start as user
+    stop after current
+    maybe prev/next when paused?
+  conky - mpd (album art)
+X install chrome
+X edit shortcuts
+X edit conky, conkywonky, add conkywonky to startup
+  edit default programs
+X edit dmenu
+X media keys
+  system beep
+X enable sd-card reader (RealTek drivers)
+  Skype?
+X check mounts in .config/openbox/autostart
+X   make sure dropbox is started before starting it
+  no sound??
+X tint2 - date, charging??

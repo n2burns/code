@@ -67,6 +67,11 @@ function series {
 		flag=true
 	  copy="$tvDir/Castle [2009]"
 	fi
+	#Archer
+	if [[ "$s" == "Archer" ]]; then
+		flag=true
+	  copy="$tvDir/Archer [2009]"
+	fi
 	#L&O SVU
 	if [[ "$s" == "Law and Order SVU" ]]; then
 		flag=true
