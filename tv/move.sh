@@ -61,7 +61,12 @@ function series {
   done
 
   #TODO make this a hash file instead which can be accessed by other scripts?
+  #TODO or look through folders and find those which
+  # ne( $folder/Season\ 01/$folder*)
+  # - ie no episodes match the folder's title.
 	#exceptions for shows where the folder and name don't match
+  # This is necessary for shows which have a year or country,
+  # as well as shows like L&O:SVU which have a formal and informal name
 	#Castle
 	if [[ "$s" == "Castle" ]]; then
 		flag=true
