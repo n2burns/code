@@ -82,22 +82,22 @@ function series {
 		flag=true
 	  copy="$tvDir/Common Law [2012]"
 	fi
-	#Dallas 2012
+	#Dallas 
 	if [[ "$s" == "Dallas" ]]; then
 		flag=true
 	  copy="$tvDir/Dallas [2012]"
 	fi
-	#The Newsroom 2012
+	#The Newsroom 
 	if [[ "$s" == "The Newsroom" ]]; then
 		flag=true
 	  copy="$tvDir/The Newsroom [2012]"
 	fi
-	#Golden Boy 2013
+	#Golden Boy 
 	if [[ "$s" == "Golden Boy" ]]; then
 		flag=true
 	  copy="$tvDir/Golden Boy [2013]"
   fi
-	#House of Cards 2013
+	#House of Cards 
 	if [[ "$s" == "House of Cards" ]]; then
 		flag=true
 	  copy="$tvDir/House of Cards [2013]"
