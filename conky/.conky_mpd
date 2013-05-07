@@ -43,8 +43,8 @@ imlib_cache_size 0
 TEXT
 M U S I C
 ${hr}
-${tab 60}$mpd_title
-${tab 60}$mpd_artist
-${tab 60}\#$mpd_track - $mpd_album
+${tab 60}${scroll 21 1 $mpd_title}
+${tab 60}${scroll 21 1 $mpd_artist}
+${tab 60}\#$mpd_track  ${scroll 15 1 $mpd_album}
 ${tab 60}${if_match "$mpd_status" == "Paused"} || $else > ${endif}${mpd_vol}% $mpd_elapsed/$mpd_length
 ${image /home/n2burns/tmp/curMPD.jpg -p 0,30 -s 55x55}

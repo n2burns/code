@@ -17,8 +17,8 @@ do
     old="$art"
     if [[ -e "$art" ]]; then
       cp "$art" "$out"
-    else
-      convert "/usr/share/pixmaps/sonata-case.png" "$out"
+#    else
+#      convert "/usr/share/pixmaps/sonata-case.png" "$out"
     fi
   fi
   `sleep 1`

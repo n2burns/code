@@ -6,10 +6,16 @@
 # really serve any purpose now, but I like the name and some people may still
 # be using/referencing it.
 
-killall conky
-killall conkympd.sh
+if [ "$(pidof conky)" ]; then
+  killall conky
+fi
+
+if [ "$(pidof -x conkympd.sh)" ]; then
+  killall conkympd.sh
+fi
+
 conky -q
-conky -q -c /home/n2burns/.conky_short
-conky -q -c /home/n2burns/.conky_mpd
-/home/n2burns/./conkympd.sh
+conky -q -c /home/n2burns/code/conky/.conky_short
+conky -q -c /home/n2burns/code/conky/.conky_mpd
+/home/n2burns/code/conky/./conkympd.sh &
 exit
