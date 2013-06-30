@@ -15,5 +15,5 @@
 CapsLock::return
 Insert::return
 #C::Run calc
-#T::Run cmd
+;#T::Run cmd
 ;add shortcuts to disable insert, cap locks
