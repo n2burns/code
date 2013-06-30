@@ -14,8 +14,8 @@ if [ "$(pidof -x conkympd.sh)" ]; then
   killall conkympd.sh
 fi
 
-conky -q -c /home/n2burns/code/conky/.conkyrc
-conky -q -c /home/n2burns/code/conky/.conky_short
-conky -q -c /home/n2burns/code/conky/.conky_mpd
-/home/n2burns/code/conky/./conkympd.sh &
+conky -q
+conky -q -c /home/n2burns/.conky_short
+conky -q -c /home/n2burns/.conky_mpd
+/home/n2burns/./conkympd.sh &
 exit
