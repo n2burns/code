@@ -1,99 +1,73 @@
 #!/bin/bash
 
-#	flac2ogg.sh:	a small script to convert a bunch of FLAC files to
-#					OGG/Vorbis
-#
-#	Copyright (C) 2005, Daniel Schregenberger (npfdd{insert@here}gmx.net)
-#
-#	License: GPL
-#
-#	Version 0.1 - Initial Release
+#flac2ogg.sh
 
-# define a dir where temporary files may be stored
-DIR="/tmp"
+#This script is designed to keep an up-to-date downscale of all of the flac
+#in a library, in ogg format
+#
+#It itterates through all the files in the flac folder and sees if a
+#matching file exists in the ogg folder. If not, it creates a new ogg file using the supplied quality
 
-# helper function to exit with a message
-die(){
-	cat <<-EOF
-		$@
-	EOF
-	exit 1
+#quality - oggenc default is 3 which gives a filesize of approximately 10% of FLAC
+#q=-1 is the lowest possible value giving a filesize of approx 4.5% of FLAC
+#q=0 6.1% of flac
+
+function usage {
+	echo "usage: $0 flacDir oggDir [quality]"
 }
 
-usage() {
-	echo "usage: $0 flacdir oggdir [quality]"
-}
-
-# basic tests
-if [ -z "$1" ]; then
-	usage
-	die "no flac directory specified"
-fi
-if [ -z "$2" ]; then
-	usage
-	die "no ogg directory specified"
-fi
-if [ -z "$3" ]; then
-	Q=""
+#if args exist, use them. If not, use the supplied data
+if [ $# = 2 ]; then
+	flac="${1%/}"
+	ogg="${2%/}"
+	q="0"
+elif [ $# = 3 ]; then
+	flac="$1"
+	ogg="$2"
+	q="$3"
 else
-	Q="-q$3"
+	usage
+	exit 0
 fi
+output="`date`.log"
 
-# basic assignments
-FLACDIR="$1"
-OGGDIR="$2"
+#function that itterates through the folders
+function sub {
+	folder="$1"
 
-# loop over a specified directory
-iterate() {
-	prefix=$1
-	action=$2
-
-	ls "$FLACDIR/$prefix" | while read flacfile ; do
-		$action "$prefix" "$flacfile"
-		
-		# test for exit status of action
-		if [ "$?" = "1" ]; then
-			exit 1
+	for file in "$folder/"*; do
+		if [ -d "$file" ]; then
+			sub "$file"
+		else
+			encode "$file"
 		fi
-		
-		prefix=$1
 	done
-	
-	# test for exit status of the loop
-	if [ "$?" = "1" ]; then
-		exit 1
+}
+
+#check if output file already exists
+#if it doesn't exist, encode it
+function encode {
+	f="$1"
+	file="${f##$flac}"
+	file="${file##/}"
+	if [ -e "$ogg/$file" ]; then
+		echo "$ogg/$file already exists"
+	elif [[ "$file" == *.flac ]]; then
+		file="${file%.flac}"".ogg"
+		if [ -e "$ogg/$file" ]; then
+			echo "$ogg/$file already exists"
+		else
+			#had to set frequency
+			oggenc "$1" -q $q -o "$ogg/$file" --resample 44100
+			if [ ! -e "$ogg/$file" ]; then
+				echo "$ogg/$file was not written" >>  "$output"
+			fi	
+		fi
+	fi
+	#copy album art
+	if [[ "$file" == *.jpg ]]; then
+		cp "$1" "$ogg/$file"
 	fi
 }
 
-encode() {
-	prefix=$1
-	flacfile=$2
-	
-	# omit directories
-	if [ -d "$FLACDIR/$prefix/$flacfile" ]; then
-		echo "entering directory $flacfile ..."
-		mkdir -p "$OGGDIR/$prefix/$flacfile"
-		iterate "$prefix/$flacfile" "encode"
-		echo "leaving directory $flacfile ..."
-		echo
-	else
-		oggfile=$(echo "$flacfile" | sed -e 's/.flac$/.ogg/')
-		
-		# omit existing files
-		if [ -f "$OGGDIR/$prefix/$oggfile" ]; then
-			continue
-		fi
-
-		# only encode flac files
-		f=`echo "$flacfile" | grep "flac$"`
-		if [ -z "$f" ]; then
-			continue
-		fi
-
-		# create ogg file
-		oggenc $Q -o "$OGGDIR/$prefix/$oggfile" "$FLACDIR/$prefix/$flacfile"
-	fi
-}
-
-echo "encoding ..."
-iterate "" "encode"
+sub "$flac"

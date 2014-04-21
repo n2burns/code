@@ -26,6 +26,7 @@ function getNext {
 		next="0$next"
 	fi
 }
+
 function check {
 	getSeries
 	getSeason
