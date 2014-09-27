@@ -51,7 +51,7 @@ thunar --daemon &
 
 ## Detect and configure touchpad. See 'man synclient' for more info.
 if egrep -iq 'touchpad' /proc/bus/input/devices; then
-    /home/n2burns/Dropbox/code/./touchpad.sh
+    /home/n2burns/code/crunchbang/./touchpad.sh
 fi
 
 ## Start xscreensaver
@@ -66,7 +66,7 @@ xset r rate 250 25 &
 
 ## The following command runs hacks and fixes for #! LiveCD sessions.
 ## Safe to delete after installation.
-cb-cowpowers &
+#cb-cowpowers &
 
 ## cb-welcome - post-installation script, will not run in a live session and
 ## only runs once. Safe to remove.
@@ -79,7 +79,11 @@ cb-cowpowers &
 xset b off &
 
 # mpd and scrobbler
-(sleep 10s && mpd && mpdscribble && sleep 2s && sonata --hidden) &
+#(sleep 10s && mpd && mpdscribble && sonata --hidden ) &
+(sleep 10s && mpd && mpdscribble ) &
 
 # starts dropbox iff Windows partition and Dropbox folder have mounted correctly
-(sleep 10s && /home/n2burns/Dropbox/code/chkMount.sh) &
+(sleep 10s && /home/n2burns/code/crunchbang/./chkMount.sh) &
+
+#disable caplock key
+setxkbmap -option ctrl:nocaps &
