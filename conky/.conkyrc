@@ -58,8 +58,8 @@ Swap: $alignr $swap/$swapmax
            $swapbar
 Disk: $alignr $fs_used/$fs_size
            $fs_bar
-$alignr ${fs_used /media/windows/}/${fs_size /media/windows/}
-           ${fs_bar /media/windows/}
+$alignr ${fs_used /media/win/}/${fs_size /media/win/}
+           ${fs_bar /media/win/}
 Battery:   $battery_bar
 Network Address:$alignr${addr wlan0}
 

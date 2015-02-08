@@ -11,7 +11,7 @@ function usage {
 
 #if args exist, use them. If not, use the supplied data
 downDir=`pwd`/
-tvDir="/home/n2burns/videos/tv/"
+tvDir="/home/n2burns/Videos/TV/"
 if [[ $# = 1 ]]; then
 	#relative paths using $(readlink -f "$1") http://andy.wordpress.com/2008/05/09/bash-equivalent-for-php-realpath/
 	downDir=$(readlink -f "$1")/
@@ -101,12 +101,17 @@ function series {
 	if [[ "$s" == "Golden Boy" ]]; then
 		flag=true
 	  copy="$tvDir/Golden Boy [2013]"
-  fi
+  	fi
 	#House of Cards 
 	if [[ "$s" == "House of Cards" ]]; then
 		flag=true
 	  copy="$tvDir/House of Cards [2013]"
-  fi
+  	fi
+	#The Flash
+	if [[ "$s" == "The Flash" ]]; then
+		flag=true
+	  copy="$tvDir/The Flash [2014]"
+  	fi
 }
 
 function season {
