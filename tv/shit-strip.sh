@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#quick-strip.sh - to shit strip TV files before they get renamed
+#shit-strip.sh - to shit strip TV files before they get renamed
 # this one only does basic stripping
 # it finds "HDTV" in the name, replaces all "." before with " "
 # and removes "hdtv" and everything else up to the .ext
