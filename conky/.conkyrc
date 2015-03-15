@@ -51,6 +51,7 @@ ${hr}
 Host: $alignr$nodename
 CPU:$alignr${freq 1}mHz ${freq 2}mHz
 $alignr${freq 3}mHz ${freq 4}mHz
+$alignr${loadavg}
            $cpubar
 RAM: $alignr $mem/$memmax
            $membar
