@@ -1,7 +1,7 @@
 <advancedsettings>
-	<videodatabase>
-  	<type>mysql</type>
-    <host>10.0.0.10</host>
+  <videodatabase>
+    <type>mysql</type>
+    <host>192.168.1.10</host>
     <port>3306</port>
     <user>kodi</user>
     <pass>kodi</pass>
@@ -9,7 +9,7 @@
 
   <musicdatabase>
     <type>mysql</type>
-    <host>10.0.0.10</host>
+    <host>192.168.1.10</host>
     <port>3306</port>
     <user>kodi</user>
     <pass>kodi</pass>
@@ -18,8 +18,14 @@
   <videolibrary>
     <hideemptyseries>true</hideemptyseries>
     <recentlyaddeditems>150</recentlyaddeditems>
+    <importwatchedstate>true</importwatchedstate>
+    <importresumepoint>true</importresumepoint>
+    <usefasthash>false</usefasthash>
   </videolibrary>
 
+  <videoscanner>
+     <ignoreerrors>true</ignoreerrors>
+  </videoscanner>
   <!--
   <pathsubstitution>
 		<substitute>
@@ -51,6 +57,7 @@
     <timeseekforwardbig>300</timeseekforwardbig>
     <timeseekbackwardbig>-300</timeseekbackwardbig>
   </video>
+
 
   <alwaysontop>yes</alwaysontop>
 </advancedsettings>
