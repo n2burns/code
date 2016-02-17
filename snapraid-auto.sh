@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # snapraid-auto.sh
 
@@ -20,7 +20,6 @@ if [ $# = 0 ]; then
 	su n2burns -c "gamma boot"
 elif [ $# = 1 ] && [ $1 == "scrub" ]; then
 	su n2burns -c "gamma shutdown"
-	snapraid sync
 	snapraid scrub
 	su n2burns -c "gamma boot"
 else

@@ -12,6 +12,8 @@
 #q=-1 is the lowest possible value giving a filesize of approx 4.5% of FLAC
 #q=0 6.1% of flac
 
+#TODO highlight to the user errors reported by oggenc
+
 function usage {
 	echo "usage: $0 flacDir oggDir [quality]"
 }
@@ -29,7 +31,7 @@ else
 	usage
 	exit 0
 fi
-output="`date`.log"
+output="flac2ogg-`date +%Y%m%d_%H%M%S`.log"
 
 #function that itterates through the folders
 function sub {

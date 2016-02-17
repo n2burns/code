@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # gamma.sh
 
@@ -20,19 +20,19 @@ if [ $# != 1 ]; then
 else
 	case $1 in
 		status)
-			VBoxManage showvminfo --machinereadable | grep "VMState="
+			VBoxManage showvminfo gamma --machinereadable | grep "VMState=";;
 		boot)
-			VBoxManage startvm gamma --type headless
+			VBoxManage startvm gamma --type headless;;
 		shutdown)
-			VBoxManage controlvm gamma acpipowerbutton
+			VBoxManage controlvm gamma acpipowerbutton;;
 		restart)
-			VBoxManage controlvm gamma acpisleepbutton
+			VBoxManage controlvm gamma acpisleepbutton;;
 		pause)
-			VBoxManage controlvm gamma pause
+			VBoxManage controlvm gamma pause;;
 		resume)
-			VBoxManage controlvm gamma resume
+			VBoxManage controlvm gamma resume;;
 		*)
 			usage
-			exit 0
+			exit 0;;
 	esac
 fi
