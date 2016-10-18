@@ -51,12 +51,14 @@
   </pathsubstitution>
   -->
 
+  <!--
   <video>
     <timeseekforward>10</timeseekforward>
     <timeseekbackward>-10</timeseekbackward>
     <timeseekforwardbig>300</timeseekforwardbig>
     <timeseekbackwardbig>-300</timeseekbackwardbig>
   </video>
+  -->
 
 
   <alwaysontop>yes</alwaysontop>
