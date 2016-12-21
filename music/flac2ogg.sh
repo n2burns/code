@@ -24,8 +24,8 @@ if [ $# = 2 ]; then
 	ogg="${2%/}"
 	q="0"
 elif [ $# = 3 ]; then
-	flac="$1"
-	ogg="$2"
+	flac="${1%/}"
+	ogg="${2%/}"
 	q="$3"
 else
 	usage

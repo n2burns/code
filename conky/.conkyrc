@@ -26,16 +26,18 @@ own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 200 200
-maximum_width 240
+maximum_width 200
 draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
-default_color d8d8d8
-#default_color 222222
+#default_color d8d8d8
+default_color 222222
+#default_color 594f4d
 default_shade_color 000000
 default_outline_color d9d7d6
 alignment top_left
+#alignment bottom_left
 gap_x 1154
 gap_y 42
 no_buffers yes
@@ -62,7 +64,7 @@ Disk: $alignr $fs_used/$fs_size
 $alignr ${fs_used /media/win/}/${fs_size /media/win/}
            ${fs_bar /media/win/}
 Battery:   $battery_bar
-Network Address:$alignr${addr wlan0}
+Address:   $alignr${addr wlan0}
 
 P R O C E S S E S
 ${hr}
