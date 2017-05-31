@@ -3,7 +3,7 @@
 # playing in MPD to $imageDir as curMPD.jpg. If albumart.jpg does not exist,
 # copies /usr/share/pixmaps/sonatacd.png instead
 
-musicDir="/home/n2burns/music"
+musicDir="/home/n2burns/miniMusic"
 out="/home/n2burns/tmp/curMPD.jpg"
 old=""
 

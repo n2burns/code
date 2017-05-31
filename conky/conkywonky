@@ -15,7 +15,7 @@ if [ "$(pidof -x conkympd.sh)" ]; then
 fi
 
 conky -q -c /home/n2burns/code/conky/.conkyrc
-conky -q -c /home/n2burns/code/conky/.conky_short
+#conky -q -c /home/n2burns/code/conky/.conky_short
 conky -q -c /home/n2burns/code/conky/.conky_mpd
 /home/n2burns/code/conky/./conkympd.sh &
 exit

@@ -24,13 +24,14 @@ draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
-default_color d8d8d8
+#default_color d8d8d8
 #default_color 222222
-default_shade_color 000000
-default_outline_color d9d7d6
+default_color 594f4d
+#default_shade_color 000000
+#default_outline_color d9d7d6
 alignment top_left
 gap_x 1154
-gap_y 556
+gap_y 636
 #gap_x 12
 #gap_y 12
 no_buffers yes
@@ -47,5 +48,6 @@ ${hr}
 ${tab 60}${scroll 21 1 $mpd_title}
 ${tab 60}${scroll 21 1 $mpd_artist}
 ${tab 60}\#$mpd_track  ${scroll 15 1 $mpd_album}
-${tab 60}${if_match "$mpd_status" == "Paused"} || $else > ${endif}${mpd_vol}% $mpd_elapsed/$mpd_length
+#${tab 60}${if_match "$mpd_status" == "Paused"} || $else > ${endif}${mpd_vol}% $mpd_elapsed/$mpd_length
+${tab 60}${if_match "$mpd_status" == "Paused"} || $else > ${endif} $mpd_elapsed/$mpd_length
 ${image /home/n2burns/tmp/curMPD.jpg -p 0,30 -s 55x55}

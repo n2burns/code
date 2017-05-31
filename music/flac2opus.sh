@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#flac2ogg.sh
+#flac2opus.sh
 
 #This script is designed to keep an up-to-date downscale of all of the flac
 #in a library, in ogg format
