@@ -11,7 +11,7 @@
 
 
 function usage {
-	echo "usage: $0 status|startvm|shutdown|restart|pause|resume"
+	echo "usage: $0 status|boot|shutdown|restart|pause|resume"
 }
 
 if [ $# != 1 ]; then
