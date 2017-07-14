@@ -31,9 +31,9 @@ draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
-#default_color d8d8d8
+default_color d8d8d8
 #default_color 222222
-default_color 594f4d
+#default_color 594f4d
 default_shade_color 000000
 default_outline_color d9d7d6
 alignment top_left
