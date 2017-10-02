@@ -39,7 +39,7 @@ default_outline_color d9d7d6
 alignment top_left
 #alignment bottom_left
 gap_x 1154
-gap_y 42
+gap_y 12
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
