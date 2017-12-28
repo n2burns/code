@@ -64,7 +64,13 @@ Disk: $alignr $fs_used/$fs_size
 $alignr ${fs_used /media/win/}/${fs_size /media/win/}
            ${fs_bar /media/win/}
 Battery:   $battery_bar
-Address:   $alignr${addr wlan0}
+
+N E T W O R K
+${hr}
+eth0  Addr:   $alignr${addr eth0}
+${goto 75}${downspeed eth0}${goto 135}| $alignr${upspeed eth0}
+wlan0 Addr:   $alignr${addr wlan0}
+${goto 75}${downspeed wlan0}${goto 135}| $alignr${upspeed wlan0}
 
 P R O C E S S E S
 ${hr}
