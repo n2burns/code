@@ -38,7 +38,7 @@ default_shade_color 000000
 default_outline_color d9d7d6
 alignment top_left
 #alignment bottom_left
-gap_x 1068
+gap_x 1154
 gap_y 12
 no_buffers yes
 uppercase no
@@ -61,14 +61,16 @@ Swap: $alignr $swap/$swapmax
            $swapbar
 Disk: $alignr $fs_used/$fs_size
            $fs_bar
+$alignr ${fs_used /media/win/}/${fs_size /media/win/}
+           ${fs_bar /media/win/}
 Battery:   $battery_bar
 
 N E T W O R K
 ${hr}
-enp0s25  Addr: $alignr${addr enp0s25}
-${goto 75}${downspeed enp0s25}${goto 135}| $alignr${upspeed enp0s25}
-wlp2s0   Addr: $alignr${addr wlp2s0}
-${goto 75}${downspeed wlp2s0}${goto 135}| $alignr${upspeed wlp2s0}
+eth0  Addr:   $alignr${addr eth0}
+${goto 75}${downspeed eth0}${goto 135}| $alignr${upspeed eth0}
+wlan0 Addr:   $alignr${addr wlan0}
+${goto 75}${downspeed wlan0}${goto 135}| $alignr${upspeed wlan0}
 
 P R O C E S S E S
 ${hr}

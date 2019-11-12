@@ -30,7 +30,7 @@ default_color d8d8d8
 #default_shade_color 000000
 #default_outline_color d9d7d6
 alignment top_left
-gap_x 1068
+gap_x 1154
 gap_y 636
 #gap_x 12
 #gap_y 12
