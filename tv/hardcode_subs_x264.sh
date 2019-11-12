@@ -53,9 +53,9 @@ function encode {
   	#TODO check if embedded subs
 	  #TODO check if in x265
   	if [[ "$sub" == sep ]]; then
-	  	ffmpeg -y -i "$in/$name"."$ext" -vf subtitles="$in/$name".en.srt "$out/$name.$ext"
+	  	ffmpeg -y -i "$in/$name"."$ext" -c:a copy -c:v libx264 -vf subtitles="$in/$name".en.srt "$out/$name.$ext"
 	  else
-		  ffmpeg -y -i "$in/$name"."$ext" -vf subtitles="$in/$name"."$ext" "$out/$name.$ext"
+		  ffmpeg -y -i "$in/$name"."$ext" -c:a copy -c:v libx264 -vf subtitles="$in/$name"."$ext" "$out/$name.$ext"
 	  fi
   fi
 }

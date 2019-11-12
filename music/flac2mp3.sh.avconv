@@ -46,8 +46,8 @@ function encode {
 		if [ -e "$mp3/$file" ]; then
 			echo "$mp3/$file already exists"
 		else
-			echo "ffmpeg -i $1 $mp3/$file"
-			ffmpeg -i "$1" "$mp3/$file"
+			echo "avconv -i $1 $mp3/$file"
+			avconv -i "$1" "$mp3/$file"
 			if [ ! -e "$mp3/$file" ]; then
                                 echo "$mp3/$file was not written" >>  "$output"
 			fi
