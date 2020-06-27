@@ -50,15 +50,19 @@
 		</substitute>
   </pathsubstitution>
   -->
-
-  <!--
+	
   <video>
+    <!--	  
     <timeseekforward>10</timeseekforward>
     <timeseekbackward>-10</timeseekbackward>
     <timeseekforwardbig>300</timeseekforwardbig>
     <timeseekbackwardbig>-300</timeseekbackwardbig>
+    --->
+
+    <playcountminimumpercent>95</playcountminimumpercent>
+    <ignoresecondsatstart>240</ignoresecondsatstart>
+    <ignorepercentatend>5</ignorepercentatend>	
   </video>
-  -->
 
 
   <alwaysontop>yes</alwaysontop>
