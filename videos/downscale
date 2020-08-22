@@ -1,7 +1,0 @@
-ffmpeg -i Transplant.S01E09.720p.HDTV.x264-TWERK\[rarbg\]/transplant.s01e09.720p.hdtv.x264-twerk.mkv -s 854x480 -c:v libx264 -crf 23 -c:a aac -strict -2 Transplant.S01E09.720p.HDTV.x264-TWERK.mkv
-
-filter:v scale=720:-1
-filter:v scale=480:-1
-
-
-ffmpeg -i 30.for.30.S03E30.The.Dominican.Dream.720p.ESPN.WEB-DL.AAC2.0.H264.mp4 -filter:v scale=-1:480 -c:v libx264 -crf 23 -c:a aac -strict -2 30.for.30.S03E30.The.Dominican.Dream.480p.mp4
