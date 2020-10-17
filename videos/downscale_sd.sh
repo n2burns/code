@@ -48,9 +48,21 @@ function encode {
 	echo $height
 	if [ $height -gt 550 ]; then
 		#backup
-		`mv "$video" "$video.bak"`
+		#`mv "$video" "$video.bak"`
 		#encode
-		`ffmpeg -i "$video.bak" -vf scale="-2:480" "$video"`
+		#`ffmpeg -i "$video.bak" -vf scale="-2:480" "$video"`
+
+
+		#get current file's video extension
+		ext="${video##*.}"
+		`ffmpeg -i "$video" -vf scale="-2:480" "tmp.$ext"`
+		#check that downscale has exited cleanly
+		if [ $? == 0 ]; then
+			`mv "$video" "$video.bak"`
+			`mv "tmp.$ext" "$video"
+		else
+			`rm "tmp.$ext"
+		fi
 	else
 		echo "$video"
 		echo "  $height is 480p"
