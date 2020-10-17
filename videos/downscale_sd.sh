@@ -65,7 +65,7 @@ function encode {
 		fi
 	else
 		echo "$video"
-		echo "  $height is 480p"
+		echo "  $height is SD"
 	fi
 }
 
