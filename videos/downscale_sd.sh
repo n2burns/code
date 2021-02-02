@@ -69,4 +69,5 @@ function encode {
 	fi
 }
 
+rm "$orgDir/tmp.*"
 folders
