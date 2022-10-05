@@ -30,6 +30,7 @@ fi
 dir="$orgDir"
 
 function folders {
+	rm "$dir/tmp.*"
 	#loop throgh video files
 	for i in "$dir"/*.@(avi|mp4|mkv); do
 		if [ -f "$i" ]; then
